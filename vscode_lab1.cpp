@@ -23,11 +23,12 @@ int main() {
         }
     }
     std::cout << i << std::endl;
-    int j;
-    for (j = 0; j < binarr.size(); j++) {
-        if (founder == binarr[j]) {
-            std::cout << j << std::endl;
-            break;
+    int j = binarr.size() / 2;
+    while (founder != binarr[j]) {
+        if (founder < binarr[j]) {
+            j /= 2;
+        } else {
+            j += j / 2;
         }
     }
     std::cout << j << std::endl;
