@@ -8,10 +8,12 @@ with open('data1.txt', 'r', encoding='utf-8') as file:
             print(i)
             break
     print(i)
-    for j in range(len(binarr)):
-        if founder == binarr[j]:
-            print(j)
-            break
+    j = len(binarr) // 2
+    while founder != binarr[j]:
+        if founder < binarr[j]:
+            j //= 2
+        else:
+            j += j // 2
     print(j)
     g.write(str(i) + ' ' + str(j) + '\n')
     g.close()
